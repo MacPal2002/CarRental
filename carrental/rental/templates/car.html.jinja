@@ -1,0 +1,292 @@
+{% extends "base.html.jinja" %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 text-center container">
+
+    <div class="row py-lg-5">
+        <h2 class="fw-bold display-3 text-center text-muted my-5">Szczegóły samochodu</h2>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h3 class="fw-bold fs-3 text-muted">Cheverolet</h3>
+            <h3 class="fw-bold fs-2">Mercedes Grand Sedan</h3>
+        </div>
+    </div>
+
+
+
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <img src="{% static 'images/mock/car-1.jpg' %}" class="img-fluid rounded">
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-md d-flex align-self-stretch">
+        <div class="services">
+            <div class="py-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="flaticon-dashboard"></span>
+                    </div>
+                    <div class="text df-flex flex-column mx-3">
+                        <div class="text-muted">Przebieg</div>
+                        <div class="fw-bold">40,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <div class="col-md d-flex align-self-stretch">
+        <div class="services">
+            <div class="py-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="flaticon-pistons"></span>
+                    </div>
+                    <div class="text df-flex flex-column mx-3">
+                        <div class="text-muted">Skrzynia biegów</div>
+                        <div class="fw-bold">Manualna</div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <div class="col-md d-flex align-self-stretch">
+        <div class="services">
+            <div class="py-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="flaticon-car-seat"></span>
+                    </div>
+                    <div class="text df-flex flex-column mx-3">
+                        <div class="text-muted">Ilość miejsc</div>
+                        <div class="fw-bold">5</div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="col-md d-flex align-self-stretch">
+        <div class="services">
+            <div class="py-md-4">
+                <div class="d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="flaticon-diesel"></span>
+                    </div>
+                    <div class="text df-flex flex-column mx-3">
+                        <div class="text-muted">Rodzaj paliwa</div>
+                        <div class="fw-bold">Diesel</div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
+
+
+<div class="container mt-5"> 
+    <ul class="nav nav-pills justify-content-center mb-1" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-features-tab" data-bs-toggle="pill" data-bs-target="#pills-features" type="button" role="tab" aria-controls="pills-features" aria-selected="true">Cechy</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-desc-tab" data-bs-toggle="pill" data-bs-target="#pills-desc" type="button" role="tab" aria-controls="pills-desc" aria-selected="false">Opis</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="false">Opinie</button>
+        </li>
+    </ul>
+    <hr class="hr mb-5" />
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-features" role="tabpanel" aria-labelledby="pills-features-tab" tabindex="0">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                        <li class="check"><span class="bi bi-check"></span> Airconditions</li>
+                        <li class="check"><span class="bi bi-check"></span> Child Seat</li>
+                        <li class="check"><span class="bi bi-check"></span> GPS</li>
+                        <li class="check"><span class="bi bi-check"></span> Luggage</li>
+                        <li class="check"><span class="bi bi-check"></span> Music</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                        <li class="check"><span class="bi bi-check"></span> Seat Belt</li>
+                        <li class="remove"><span class="bi bi-x"></span> Sleeping Bed</li>
+                        <li class="check"><span class="bi bi-check"></span> Water</li>
+                        <li class="check"><span class="bi bi-check"></span> Bluetooth</li>
+                        <li class="remove"><span class="bi bi-x"></span> Onboard computer</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                        <li class="check"><span class="bi bi-check"></span> Audio input</li>
+                        <li class="check"><span class="bi bi-check"></span> Long Term Trips</li>
+                        <li class="check"><span class="bi bi-check"></span> Car Kit</li>
+                        <li class="check"><span class="bi bi-check"></span> Remote central locking</li>
+                        <li class="check"><span class="bi bi-check"></span> Climate control</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="tab-pane fade" id="pills-desc" role="tabpanel" aria-labelledby="pills-desc-tab" tabindex="0">
+            <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix">
+                <p class=" fs-5 text-muted">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                <p class="fs-5 text-muted">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+            </div>
+              
+        </div>
+        <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab" tabindex="0">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="offer-dedicated-body-left">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                                <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix graph-star-rating">
+                                    <h5 class="mb-0 mb-4">Ratings and Reviews</h5>
+                                    <div class="graph-star-rating-body">
+                                        <div class="rating-list">
+                                            <div class="rating-list-left text-black">
+                                                5 Star
+                                            </div>
+                                            <div class="rating-list-center">
+                                                <div class="progress">
+                                                    <div style="width: 56%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-list-right text-black">56%</div>
+                                        </div>
+                                        <div class="rating-list">
+                                            <div class="rating-list-left text-black">
+                                                4 Star
+                                            </div>
+                                            <div class="rating-list-center">
+                                                <div class="progress">
+                                                    <div style="width: 23%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-list-right text-black">23%</div>
+                                        </div>
+                                        <div class="rating-list">
+                                            <div class="rating-list-left text-black">
+                                                3 Star
+                                            </div>
+                                            <div class="rating-list-center">
+                                                <div class="progress">
+                                                    <div style="width: 11%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-list-right text-black">11%</div>
+                                        </div>
+                                        <div class="rating-list">
+                                            <div class="rating-list-left text-black">
+                                                2 Star
+                                            </div>
+                                            <div class="rating-list-center">
+                                                <div class="progress">
+                                                    <div style="width: 2%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary"></div>
+                                                </div>
+                                            </div>
+                                            <div class="rating-list-right text-black">02%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+                                    <h5 class="mb-1">All Ratings and Reviews</h5>
+                                    <div class="reviews-members pt-4 pb-4">
+                                        <div class="media">
+                                            <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill"></a>
+                                            <div class="media-body">
+                                                <div class="reviews-members-header">
+                                                    <h6 class="mb-1 fw-bold">Singh Osahan</h6>
+                                                    <p class="text-gray">Tue, 20 Mar 2020</p>
+            
+                                                    <span class="star-rating float-right">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <i class="bi bi-star"></i>
+                                                    </span>
+                                                    
+                                                </div>
+                                                <div class="reviews-members-body">
+                                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="reviews-members pt-4 pb-4">
+                                        <div class="media">
+                                            <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar6.png" class="mr-3 rounded-pill"></a>
+                                            <div class="media-body">
+                                                <div class="reviews-members-header">
+                                                    <h6 class="mb-1 fw-bold">Gurdeep Singh</h6>
+                                                    <p class="text-gray">Tue, 20 Mar 2020</p>
+            
+                                                    <span class="star-rating float-right">
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star-fill"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <i class="bi bi-star"></i>
+                                                        <i class="bi bi-star"></i>
+                                                    </span>
+                                                    
+                                                </div>
+                                                <div class="reviews-members-body">
+                                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>
+                                </div>
+                                <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
+                                    <h5 class="mb-4">Leave Comment</h5>
+                                    <div class="mb-4">
+                                        <span class="star-rating">
+                                            <span class="star-rating float-right">
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Your Comment</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary btn-sm mt-2" type="button"> Submit Comment </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+ 
+{% endblock content %}

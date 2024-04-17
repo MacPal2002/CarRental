@@ -1,0 +1,110 @@
+
+.reviews-members .media .mr-3 {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+}
+.rounded-pill {
+    border-radius: 50rem!important;
+}
+
+.progress {
+    background: #f2f4f8 none repeat scroll 0 0;
+    border-radius: 0;
+    height: 30px;
+}
+.rating-list {
+    display: inline-flex;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.rating-list-left {
+    height: 16px;
+    line-height: 29px;
+    width: 10%;
+}
+.rating-list-center {
+    width: 80%;
+}
+.rating-list-right {
+    line-height: 29px;
+    text-align: right;
+    width: 10%;
+}
+
+  
+  .services .icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    margin-bottom: 20px; 
+}
+.services .icon span {
+    font-size: 40px;
+    color: #1089ff; 
+}
+
+
+.services.services-2 .icon {
+    width: 110px;
+    height: 110px;
+    background: #1089ff;
+    border: none; 
+}
+.services.services-2 .icon span {
+    color: #fff; 
+}
+
+.car-wrap {
+    margin-bottom: 40px;
+    -webkit-box-shadow: 0px 5px 12px -1px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 5px 12px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 5px 12px -1px rgba(0, 0, 0, 0.06);
+    background: #fff; 
+}
+.car-wrap .img {
+    width: 100%;
+    height: 220px; 
+}
+.car-wrap .text {
+    border-top: none;
+    padding: 20px 30px 30px; 
+}
+    .car-wrap .text .price {
+    color: #1089ff;
+    margin-bottom: 0;
+    font-weight: 600; 
+}
+
+.car-wrap .text .price span {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.3); 
+}
+
+.car-wrap .text h2 {
+    font-size: 20px;
+    font-weight: 500; 
+}
+
+.car-wrap .text h2 a {
+    color: #000000; 
+}
+
+.car-wrap .text span.cat {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-bottom: 0; 
+}
+.car-wrap .text p.d-block {
+    width: 100%; 
+}
+.car-wrap .text p.d-block a {
+    width: 50%; 
+}
+
+
+

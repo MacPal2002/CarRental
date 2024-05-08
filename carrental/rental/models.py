@@ -1,4 +1,7 @@
 from django.db import models
+from django.forms import ModelForm
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your models here.
 
@@ -17,7 +20,7 @@ class Car(models.Model):
     GEARBOX_TYPES = [
         ("automatyczna", "Automatyczna"),
         ("manualna", "Manualna"),
-        ("polautomatyczna", "Polautomatyczna"),
+        ("pol_automatyczna", "Poł automatyczna"),
     ]
     brand = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
@@ -30,15 +33,41 @@ class Car(models.Model):
     equipment = models.ManyToManyField(Equipment)
     gearbox_types = models.CharField(max_length=20, choices=GEARBOX_TYPES)
     available = models.BooleanField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    value = models.DecimalField(max_digits=10, decimal_places=2)
     pass
 
-class User(models.Model):
+
+
+class Address(models.Model):
+    country = models.CharField(max_length=30)
+    city = models.CharField(max_length=30)
+    post_code = models.CharField(max_length=10)
+    street = models.CharField(max_length=50)
+    building_no = models.CharField(max_length=10)
+    appartment_no = models.CharField(max_length=10)
+    
     pass
+
+class User(User):
+    IDENTITY_DOCUMENT_TYPES = [
+        ("dowod", "dowód osobisty"),
+        ("passport", "paszport"),
+        ("prawo_jazdy", "prawo jazdy"),
+    ]
+    # first_name = models.CharField(max_length=20)
+    # last_name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=20, choices=IDENTITY_DOCUMENT_TYPES)
+    identity_document_no = models.CharField(max_length=20)
+    address = models.OneToOneField(Address, on_delete=models.RESTRICT)
+    # email = models.EmailField(max_length=350)
+    pass
+
 
 class Order(models.Model):
     PAYMENT_METHODS = [
         ("karta", "Karta"),
-        ("gotowka", "Gotowka"),
+        ("gotowka", "Gotówka"),
         ("przelew", "Przelew"),
         ("blik", "Blik"),
     ]
@@ -54,3 +83,20 @@ class Order(models.Model):
     pass
 
 
+# class RegistrationForm(ModelForm):
+#     class Meta:
+#         model = User
+#         exclude = ['id']
+        # fields = ['first_name', 'last_name', 'email', 'phone', 'address']
+
+class RegistrationForm(UserCreationForm):
+    class Meta:
+        model = User
+        exclude = ['id']
+        # fields = ['first_name', 'last_name', 'email', 'phone', 'address']
+
+class AddressForm(ModelForm):
+    class Meta:
+        model = Address
+        exclude = ['id']
+        # fields = ['country', 'city', 'post_code', 'street', 'building_no', 'appartment_no']

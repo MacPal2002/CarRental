@@ -1,7 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.forms import inlineformset_factory
-from .  import models
+from django.shortcuts import render, redirect
+from . import forms
 
 def login(request):
     return render(request, 'login.html.jinja')
@@ -10,6 +8,12 @@ def logout(request):
     return render(request, 'logout.html.jinja')
 
 def register(request):
-    # form = inlineformset_factory(models.RegistrationForm, models.AddressForm, extra=1)
-    form = models.RegistrationForm()
-    return render(request, 'register.html.jinja', {'form': form})
+    if request.method == 'GET':
+        form = forms.UserCreationForm()
+        address_formset = forms.UserAddressFormSet()
+        return render(request, 'register.html.jinja', {'form': form, 'address_formset': address_formset})
+    elif request.method == 'POST':
+        form = forms.UserCreationForm(request.POST)
+        return render(request, 'register.html.jinja', {'message': 'Success!'})
+    else:
+        return render(request, 'register.html.jinja', {'message': 'Success!'})

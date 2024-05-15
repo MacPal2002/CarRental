@@ -1,7 +1,6 @@
 from django.db import models
-from django.forms import ModelForm
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 
 # Create your models here.
 
@@ -40,6 +39,7 @@ class Car(models.Model):
 
 
 class Address(models.Model):
+    user = models.OneToOneField(User, on_delete=models.RESTRICT)
     country = models.CharField(max_length=30)
     city = models.CharField(max_length=30)
     post_code = models.CharField(max_length=10)
@@ -55,12 +55,10 @@ class User(User):
         ("passport", "paszport"),
         ("prawo_jazdy", "prawo jazdy"),
     ]
-    # first_name = models.CharField(max_length=20)
-    # last_name = models.CharField(max_length=50)
-    phone = models.CharField(max_length=20, choices=IDENTITY_DOCUMENT_TYPES)
+    phone = models.CharField(max_length=20)
     identity_document_no = models.CharField(max_length=20)
-    address = models.OneToOneField(Address, on_delete=models.RESTRICT)
-    # email = models.EmailField(max_length=350)
+    identity_document_type = models.CharField(max_length=20, choices=IDENTITY_DOCUMENT_TYPES)
+    # address = models.OneToOneField(Address, on_delete=models.RESTRICT)
     pass
 
 
@@ -82,21 +80,3 @@ class Order(models.Model):
     payment_status = models.BooleanField()
     pass
 
-
-# class RegistrationForm(ModelForm):
-#     class Meta:
-#         model = User
-#         exclude = ['id']
-        # fields = ['first_name', 'last_name', 'email', 'phone', 'address']
-
-class RegistrationForm(UserCreationForm):
-    class Meta:
-        model = User
-        exclude = ['id']
-        # fields = ['first_name', 'last_name', 'email', 'phone', 'address']
-
-class AddressForm(ModelForm):
-    class Meta:
-        model = Address
-        exclude = ['id']
-        # fields = ['country', 'city', 'post_code', 'street', 'building_no', 'appartment_no']

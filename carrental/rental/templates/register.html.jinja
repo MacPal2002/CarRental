@@ -2,6 +2,16 @@
 {% load static %}
 
 {% block content %}
-    {{form}}
+    {% if message %}
+    {{ message }}
+    {%else%}
+    <form action="{% url 'register' %}" method="post" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        {{address_formset.as_p}}
+        <button type="submit">Zarejestruj się</button>
+
+    </form>
+    {% endif %}
 
 {% endblock content %}

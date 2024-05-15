@@ -45,20 +45,18 @@ class Address(models.Model):
     post_code = models.CharField(max_length=10)
     street = models.CharField(max_length=50)
     building_no = models.CharField(max_length=10)
-    appartment_no = models.CharField(max_length=10)
-    
+    appartment_no = models.CharField(max_length=10, blank=True, default='', help_text='To pole jest opcjonalne.')
     pass
 
 class User(User):
     IDENTITY_DOCUMENT_TYPES = [
-        ("dowod", "dowód osobisty"),
-        ("passport", "paszport"),
-        ("prawo_jazdy", "prawo jazdy"),
+        ("dowod", "Dowód osobisty"),
+        ("passport", "Paszport"),
+        ("prawo_jazdy", "Prawo jazdy"),
     ]
     phone = models.CharField(max_length=20)
     identity_document_no = models.CharField(max_length=20)
     identity_document_type = models.CharField(max_length=20, choices=IDENTITY_DOCUMENT_TYPES)
-    # address = models.OneToOneField(Address, on_delete=models.RESTRICT)
     pass
 
 

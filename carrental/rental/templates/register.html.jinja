@@ -3,34 +3,74 @@
 
 {% block content %}
     {% if message  == 'success' %}
-    <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Gratulacje!</h4>
-        <p>Twoja rejestracja przebiegła pomyślnie. Witamy w naszej społeczności! Teraz możesz korzystać z wszystkich funkcji naszej platformy. Ciesz się przygodą z nami!</p>
-        <hr>
-    </div>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Gratulacje!</h4>
+            <p>Twoja rejestracja przebiegła pomyślnie. Witamy w naszej społeczności! Teraz możesz korzystać z wszystkich funkcji naszej platformy. Ciesz się przygodą z nami!</p>
+            <hr>
+        </div>
 
     {%else%}
-    <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
-        <h3 class="text-center display-5 fw-bold mt-5">Formularz rejestracji:</h3>
-        <hr>
-        <form class="mt-5" action="{% url 'register' %}" method="post" novalidate>
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-6 form-group text-muted">
-                    {{form}}
-                </div>
-                <div class="col-6 form-group text-muted">
-                    {{address_formset}}
-                </div>
-            </div>
-            
+        <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
+            <h3 class="text-center display-5 fw-bold mt-5">Formularz rejestracji:</h3>
             <hr>
-            <div class="d-flex justify-content-center">
-                <button type="submit" class=" w-25 btn btn-outline-success">Zarejestruj się</button>
-            </div>
+            <form class="mt-5" action="{% url 'register' %}" method="post" novalidate>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-6 form-group text-muted">
 
-        </form>
-    </div>
+                        {% for field in user_form.visible_fields %}
+                            {{ field.label_tag }}
+                            {{ field }}
+                            <ul class="errorlist">
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                            {% if user_form.errors %}
+                                {% if field.help_text %}
+                                    <ul class="helptext">
+                                        <li>{{ field.help_text }}</li>
+                                    </ul>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-6 form-group text-muted">
+
+                        <!-- Ukryte pola formularza zestawu adresów -->
+                        {{ address_formset.management_form }}
+
+                        {% for address_form in address_formset.forms %}
+                            {% for field in address_form.visible_fields %}
+                                {{ field.label_tag }}
+                                {{ field }}
+                                <ul class="errorlist">
+                                    {% if field.errors %}
+                                        {% for error in field.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    {% endif %}
+                                </ul>
+                                {% if address_form.errors %}
+                                    {% if field.help_text %}
+                                        <ul class="helptext">
+                                            <li>{{ field.help_text }}</li>
+                                        </ul>
+                                    {% endif %}
+                                {% endif %}     
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <hr class="mt-5">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="w-25 btn btn-outline-success mt-3 mb-3">Zarejestruj się</button>
+                </div>
+            </form>
+        </div>
+
     {% endif %}
 
 {% endblock content %}

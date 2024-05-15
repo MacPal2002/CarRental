@@ -18,9 +18,11 @@ class RegistrationForm(UserCreationForm):
     class Meta:
         model = models.User
         # exclude = ['id']
-        fields = ['username', 'email', 'first_name', 'last_name', 'phone']
+        fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'phone', 'identity_document_type', 'identity_document_no']
         labels = {
             'phone': _('Numer telefonu'),
+            'identity_document_type': _('Rodzaj dokumentu tożsamości'),
+            'identity_document_no': _('Numer dokumentu tożsamości'),
         }
         help_texts = {'username': "",}
         widgets = {
@@ -29,6 +31,8 @@ class RegistrationForm(UserCreationForm):
             'first_name': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
             'phone': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
+            'identity_document_type': forms.Select(attrs={'class': 'mb-3 form-select'}),
+            'identity_document_no': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
         }
 
 

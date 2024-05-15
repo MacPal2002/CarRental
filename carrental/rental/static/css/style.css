@@ -106,10 +106,16 @@
     width: 50%; 
 }
 
-.helptext {
+.helptext, .helptext ul {
     font-size: small;
-    color: red;
+    color: green;
+    list-style-type: none;
+    padding: 0;
 
 }
-
+.errorlist{
+    color: red;
+    list-style-type: none;
+    padding: 0;
+}
 

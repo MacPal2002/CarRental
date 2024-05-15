@@ -106,5 +106,10 @@
     width: 50%; 
 }
 
+.helptext {
+    font-size: small;
+    color: red;
+
+}
 
 

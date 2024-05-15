@@ -26,8 +26,8 @@
           <a class="nav-link" aria-current="page" href="#">Kontakt</a>
         </li>
         <div class="btn-group ms-5">
-          <button type="button" class="btn btn-outline-danger">Zaloguj</button> 
-          <button type="button" class="ms-3 btn btn-danger">Zarejestruj się</button>
+          <a role="button" href="{% url 'login' %}" class="btn btn-outline-danger">Zaloguj</a> 
+          <a role="button" href="{% url 'register' %}" class="ms-3 btn btn-danger">Zarejestruj się</a>
         </div> 
       </ul>
     </div>

@@ -9,11 +9,11 @@ def logout(request):
 
 def register(request):
     if request.method == 'GET':
-        form = forms.UserCreationForm()
+        form = forms.RegistrationForm()
         address_formset = forms.UserAddressFormSet()
         return render(request, 'register.html.jinja', {'form': form, 'address_formset': address_formset})
     elif request.method == 'POST':
         form = forms.UserCreationForm(request.POST)
-        return render(request, 'register.html.jinja', {'message': 'Success!'})
+        return render(request, 'register.html.jinja', {'message': 'success'})
     else:
-        return render(request, 'register.html.jinja', {'message': 'Success!'})
+        return render(request, 'register.html.jinja', {'message': 'success'})

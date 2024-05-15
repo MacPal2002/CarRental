@@ -1,17 +1,36 @@
-{% extends "base.html.jinja" %}
+{% extends "basic/base.html.jinja" %}
 {% load static %}
 
 {% block content %}
-    {% if message %}
-    {{ message }}
-    {%else%}
-    <form action="{% url 'register' %}" method="post" novalidate>
-        {% csrf_token %}
-        {{form.as_p}}
-        {{address_formset.as_p}}
-        <button type="submit">Zarejestruj się</button>
+    {% if message  == 'success' %}
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Gratulacje!</h4>
+        <p>Twoja rejestracja przebiegła pomyślnie. Witamy w naszej społeczności! Teraz możesz korzystać z wszystkich funkcji naszej platformy. Ciesz się przygodą z nami!</p>
+        <hr>
+    </div>
 
-    </form>
+    {%else%}
+    <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
+        <h3 class="text-center display-5 fw-bold mt-5">Formularz rejestracji:</h3>
+        <hr>
+        <form class="mt-5" action="{% url 'register' %}" method="post" novalidate>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-6 form-group text-muted">
+                    {{form}}
+                </div>
+                <div class="col-6 form-group text-muted">
+                    {{address_formset}}
+                </div>
+            </div>
+            
+            <hr>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class=" w-25 btn btn-outline-success">Zarejestruj się</button>
+            </div>
+
+        </form>
+    </div>
     {% endif %}
 
 {% endblock content %}

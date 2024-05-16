@@ -13,12 +13,12 @@
         <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
             <h3 class="text-center display-5 fw-bold mt-5">Formularz rejestracji:</h3>
             <hr>
-            <form class="mt-5" action="{% url 'register' %}" method="post" novalidate>
+            <form class="mt-5" action="{% url 'register' %}" method="post">
                 {% csrf_token %}
                 <div class="row">
-                    <div class="col-6 form-group text-muted">
+                    <div class="col-12 col-lg-6 form-group text-muted">
 
-                        {% for field in user_form.visible_fields %}
+                        {% for field in register_user_form.visible_fields %}
                             {{ field.label_tag }}
                             {{ field }}
                             <ul class="errorlist">
@@ -28,7 +28,7 @@
                                     {% endfor %}
                                 {% endif %}
                             </ul>
-                            {% if user_form.errors %}
+                            {% if register_user_form.errors %}
                                 {% if field.help_text %}
                                     <ul class="helptext">
                                         <li>{{ field.help_text }}</li>
@@ -37,12 +37,12 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <div class="col-6 form-group text-muted">
+                    <div class="col-12 col-lg-6 form-group text-muted">
 
                         <!-- Ukryte pola formularza zestawu adresów -->
-                        {{ address_formset.management_form }}
+                        {{ register_address_formset.management_form }}
 
-                        {% for address_form in address_formset.forms %}
+                        {% for address_form in register_address_formset.forms %}
                             {% for field in address_form.visible_fields %}
                                 {{ field.label_tag }}
                                 {{ field }}
@@ -66,7 +66,7 @@
                 </div>
                 <hr class="mt-5">
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="w-25 btn btn-outline-success mt-3 mb-3">Zarejestruj się</button>
+                    <button type="submit" class="btn btn-outline-success mt-3 mb-3">Zarejestruj się</button>
                 </div>
             </form>
         </div>

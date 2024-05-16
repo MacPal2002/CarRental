@@ -24,9 +24,9 @@ def register(request):
             return render(request, 'register.html.jinja', {'message': 'success'})
         else:
             # Wyświetl formularz z błędami
-            return render(request, 'register.html.jinja', {'user_form': user_form, 'address_formset': address_formset})
+            return render(request, 'register.html.jinja', {'register_user_form': user_form, 'register_address_formset': address_formset})
     else:
         # Wyświetl pusty formularz
         user_form = forms.RegistrationForm()
         address_formset = forms.UserAddressFormSet()
-        return render(request, 'register.html.jinja', {'user_form': user_form, 'address_formset': address_formset})
+        return render(request, 'register.html.jinja', {'register_user_form': user_form, 'register_address_formset': address_formset})

@@ -2,6 +2,36 @@
 {% load static %}
 
 {% block content %}
-    {{form}}
+    <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
+        <h3 class="text-center display-5 fw-bold mt-5">Formularz logowania:</h3>
+        <hr>
+        <form class="mt-5" action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group text-muted">
+                {% for field in login_form.visible_fields %}
+                    {{ field.label_tag }}
+                    {{ field }}
+                    <ul class="errorlist">
+                        {% if field.errors %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                    {% if login_form.errors %}
+                        {% if field.help_text %}
+                            <ul class="helptext">
+                                <li>{{ field.help_text }}</li>
+                            </ul>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <hr class="mt-5">
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-outline-success mt-3 mb-3">Zaloguj się</button>
+            </div>
+        </form>
+    </div>
 
 {% endblock content %}

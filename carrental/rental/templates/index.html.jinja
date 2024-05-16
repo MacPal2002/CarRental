@@ -4,83 +4,263 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-4">
+    <div class="col-12 col-xl-4">
         <h3 class="text-center fs-4 fw-bold">Zaplanuj podróż z nami!</h2>
         <h2 class="text-center fw-bold display-4"><span class="text-danger">Zaoszczędź</span> dzięki naszej wypożyczalni</h2>
         
         <div class="mt-5 d-flex justify-content-center">
-            <button type="button" class="btn btn-danger btn-lg">Zarezerwuj</button>
-            <button type="button" class=" ms-3 btn btn-outline-dark btn-lg">Dowiedz się wiecej</button>
+            <a role="button" href="{% url 'cars' %}" class="btn btn-danger btn-lg">Zarezerwuj</a>
+            <a role="button" href="#" class=" ms-3 btn btn-outline-dark btn-lg">Dowiedz się wiecej</a>
         </div>
 
     </div>
-    <div class="col-8">
+    <div class="col-12 col-xl-8">
         <img src="{% static 'images/car-bg.png' %}" alt="car" class="img-fluid">
     </div>
 </div>
 
-<section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-bold text-muted fs-4">Co oferujemy</h1>
-        <p class="display-5 fw-bold">Polecane samochody</p>
-      </div>
+<section class="pt-5 text-center container">
+    <div class="pt-lg-5 pb-lg-2 mx-auto">
+        <h1 class="fw-bold text-muted fs-3 mb-5">Co oferujemy</h1>
+        <p class="display-6 fw-bold">Polecane samochody</p>
+    </div>
+
+    <div id="recommendedCarsCarosel" class="carousel slide container" data-bs-ride="carousel">
+    <div class="carousel-inner w-100">
+        <div class="carousel-item active">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-1.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-2.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-3.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-4.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-5.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-6.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#recommendedCarsCarosel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#recommendedCarsCarosel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
     </div>
 </section>
 
+<section class="pt-5 text-center container">
+    <div class="pt-lg-5 pb-lg-2 mx-auto">
+        <p class="display-6 fw-bold">Najczęściej wybierane samochody</p>
+    </div>
 
-<div class="container">
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div id="mostPickedCarsCarosel" class="carousel slide container" data-bs-ride="carousel">
+    <div class="carousel-inner w-100">
+        <div class="carousel-item active">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-1.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-    
-            <div class="container">
-              <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-              </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-2.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-    
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-    
-            <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-</div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-3.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-4.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-5.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+        <div class="col-md-3 px-3">
+                <div class="car-wrap rounded"> 
+                    <div class="d-flex align-items-end">
+                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-6.jpg' %}" alt="car">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="cat">Subaru</span>
+                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mostPickedCarsCarosel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mostPickedCarsCarosel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+</section>
 
 
 
@@ -90,21 +270,23 @@
 {% block scripts %}
 
 <script>
-    let items = document.querySelectorAll('.carousel .carousel-item')
-
-    items.forEach((el) => {
-        const minPerSlide = 4
-        let next = el.nextElementSibling
-        for (var i=1; i<minPerSlide; i++) {
-            if (!next) {
-                // wrap carousel by using first child
-                next = items[0]
-            }
-            let cloneChild = next.cloneNode(true)
-            el.appendChild(cloneChild.children[0])
-            next = next.nextElementSibling
+    $('.carousel .carousel-item').each(function(){
+        var minPerSlide = 4;
+        var next = $(this).next();
+        if (!next.length) {
+        next = $(this).siblings(':first');
         }
-    })
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
 
 </script>
 

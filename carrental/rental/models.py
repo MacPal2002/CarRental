@@ -6,7 +6,10 @@ from django.contrib.auth.models import User
 
 class Equipment(models.Model):
     equipment = models.CharField(max_length=50)
-    pass
+
+    def __str__(self) -> str:
+        return self.equipment
+pass
 
 class Car(models.Model):
     ENGINE_TYPES = [
@@ -21,19 +24,27 @@ class Car(models.Model):
         ("manualna", "Manualna"),
         ("pol_automatyczna", "Poł automatyczna"),
     ]
-    brand = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
-    engine_type = models.CharField(max_length=20, choices=ENGINE_TYPES)
-    seats_count = models.PositiveBigIntegerField()
-    doors_count = models.PositiveSmallIntegerField()
-    fuel_usage = models.FloatField()
-    engine_power = models.PositiveSmallIntegerField()
-    color = models.CharField(max_length=20)
-    equipment = models.ManyToManyField(Equipment)
-    gearbox_types = models.CharField(max_length=20, choices=GEARBOX_TYPES)
-    available = models.BooleanField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    value = models.DecimalField(max_digits=10, decimal_places=2)
+    CATEGORIES = [
+        ("suv", "Suv"),
+        ("miejski", "Miejski"),
+        ("terenowy", "Terenowy"),
+        ("van", "Van"),
+        ("sportowy", "Sportowy"),
+    ]
+    category = models.CharField(max_length=50, choices=CATEGORIES, verbose_name='Kategoria')
+    brand = models.CharField(max_length=50, verbose_name='Marka')
+    model = models.CharField(max_length=50, verbose_name='Model')
+    engine_type = models.CharField(max_length=20, choices=ENGINE_TYPES, verbose_name='Typ silnika')
+    seats_count = models.PositiveBigIntegerField(verbose_name='Ilość siedzeń')
+    doors_count = models.PositiveSmallIntegerField(verbose_name='Ilość drzwi')
+    fuel_usage = models.FloatField(verbose_name='Zużycie paliwa')
+    engine_power = models.PositiveSmallIntegerField(verbose_name='Moc silnika')
+    color = models.CharField(max_length=20, verbose_name='Kolor')
+    equipment = models.ManyToManyField(Equipment, verbose_name='Wyposażenie')
+    gearbox_types = models.CharField(max_length=20, choices=GEARBOX_TYPES, verbose_name='Typ skrzyni biegów')
+    available = models.BooleanField(verbose_name='Dostępność')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Cena')
+    value = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Wartość')
     pass
 
 

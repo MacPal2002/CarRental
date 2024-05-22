@@ -17,14 +17,8 @@ class RegistrationForm(UserCreationForm):
             "class": "mb-3 form-control",
         })
     class Meta:
-        model = models.User
-        # exclude = ['id']
+        model = models.UserData
         fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'phone', 'identity_document_type', 'identity_document_no']
-        labels = {
-            'phone': _('Numer telefonu'),
-            'identity_document_type': _('Rodzaj dokumentu tożsamości'),
-            'identity_document_no': _('Numer dokumentu tożsamości'),
-        }
         help_texts = {'username': "",}
         widgets = {
             'username': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
@@ -40,16 +34,7 @@ class RegistrationForm(UserCreationForm):
 class AddressForm(ModelForm):
     class Meta:
         model = models.Address
-        # fields = ['country', 'city', 'post_code', 'street', 'building_no', 'appartment_no']
         exclude = ['id']
-        labels = {
-            'country': _('Kraj'),
-            'city': _('Miasto'),
-            'post_code': _('Kod pocztowy'),
-            'street': _('Ulica'),
-            'building_no': _('Numer budynku'),
-            'appartment_no': _('Numer mieszkania'),
-        }
         widgets = {
             'country': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
             'city': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
@@ -61,7 +46,7 @@ class AddressForm(ModelForm):
 
 
 UserAddressFormSet = inlineformset_factory(
-    parent_model=models.User,
+    parent_model=models.UserData,
     model= models.Address,
     form=AddressForm,
     extra=0,

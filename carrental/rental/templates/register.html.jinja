@@ -1,17 +1,18 @@
 {% extends "basic/base.html.jinja" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
     {% if message  == 'success' %}
         <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Gratulacje!</h4>
-            <p>Twoja rejestracja przebiegła pomyślnie. Witamy w naszej społeczności! Teraz możesz korzystać z wszystkich funkcji naszej platformy. Ciesz się przygodą z nami!</p>
+            <h4 class="alert-heading">{% trans 'Congratulations!' %}</h4>
+            <p>{% trans 'Your registration was successful. Welcome to our community! Now you can enjoy all the features of our platform. Enjoy the adventure with us!' %}</p>
             <hr>
         </div>
 
-    {%else%}
+    {% else %}
         <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
-            <h3 class="text-center display-5 fw-bold mt-5">Formularz rejestracji:</h3>
+            <h3 class="text-center display-5 fw-bold mt-5">{% trans 'Registration Form:' %}</h3>
             <hr>
             <form class="mt-5" action="{% url 'register' %}" method="post">
                 {% csrf_token %}
@@ -40,10 +41,10 @@
                     <div class="col-12 col-lg-6 form-group text-muted">
 
                         <!-- Ukryte pola formularza zestawu adresów -->
-                        {{ register_address_formset.management_form }}
+                        {{ register_address_form.management_form }}
 
-                        {% for address_form in register_address_formset.forms %}
-                            {% for field in address_form.visible_fields %}
+                        {% for form in register_address_form.forms %}
+                            {% for field in form.visible_fields %}
                                 {{ field.label_tag }}
                                 {{ field }}
                                 <ul class="errorlist">
@@ -53,7 +54,7 @@
                                         {% endfor %}
                                     {% endif %}
                                 </ul>
-                                {% if address_form.errors %}
+                                {% if form.errors %}
                                     {% if field.help_text %}
                                         <ul class="helptext">
                                             <li>{{ field.help_text }}</li>
@@ -66,7 +67,7 @@
                 </div>
                 <hr class="mt-5">
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-outline-success mt-3 mb-3">Zarejestruj się</button>
+                    <button type="submit" class="btn btn-outline-success mt-3 mb-3">{% trans 'Sign-Up' %}</button>
                 </div>
             </form>
         </div>

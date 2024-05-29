@@ -1,3 +1,26 @@
-<footer class="text-center fw-bold bg-dark text-white mt-5">
-    <p class="my-3">Designed by Maciej Palenica &copy; 2024</p> 
+{% load i18n %}
+
+<footer class="position-relative bg-dark text-white mt-5 p-3 d-flex flex-column flex-md-row align-items-center justify-content-center">
+    <div>
+        <p class="fw-bold mb-0">{% trans 'Designed by Maciej Palenica &copy; 2024' %}</p>
+    </div>
+    <form action="{% url 'setlang' %}" method="post" id="languageForm" class="d-inline-flex">
+        {% csrf_token %}
+        <label class="px-2 align-self-center" for="language">{% trans 'Language' %}:</label>
+        <select name="language" class="form-select" onchange="changeLanguage(this.value)">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% for lang in LANGUAGES %}
+                <option value="{{ lang.0 }}"{% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ lang.1 }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+    <script>
+        function changeLanguage(languageCode) {
+            const form = document.getElementById('languageForm');
+            form.elements.language.value = languageCode;
+            form.submit();
+        }
+  </script>
 </footer>

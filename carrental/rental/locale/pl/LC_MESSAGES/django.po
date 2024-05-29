@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-24 21:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: .\settings.py:111
+msgid "english"
+msgstr "angielski"
+
+#: .\settings.py:112
+msgid "polish"
+msgstr "polski"
+
+#: .\rental\models.py:6 .\rental\models.py:12 .\rental\models.py:44
+msgid "Equipment"
+msgstr "Wyposażenie"
+
+#: .\rental\models.py:13
+msgid "Equipments"
+msgstr "Wyposażenia"
+
+#: .\rental\models.py:17
+msgid "Petrol"
+msgstr "Benzynowy"
+
+#: .\rental\models.py:18
+msgid "Diesel"
+msgstr "Diesel"
+
+#: .\rental\models.py:19
+msgid "Hybrid"
+msgstr "Hybrydowy"
+
+#: .\rental\models.py:20
+msgid "Electric"
+msgstr "Elektryczny"
+
+#: .\rental\models.py:21
+msgid "Hydrogen"
+msgstr "Wodorowy"
+
+#: .\rental\models.py:24
+msgid "Automatic"
+msgstr "Automatyczna"
+
+#: .\rental\models.py:25
+msgid "Manual"
+msgstr "Manualna"
+
+#: .\rental\models.py:26
+msgid "Semi-automatic"
+msgstr "Pół automatyczna"
+
+#: .\rental\models.py:29
+msgid "SUV"
+msgstr "SUV"
+
+#: .\rental\models.py:30
+msgid "City-friendly"
+msgstr "Miejski"
+
+#: .\rental\models.py:31
+msgid "Off-road"
+msgstr "Terenowy"
+
+#: .\rental\models.py:32
+msgid "Van"
+msgstr "Van"
+
+#: .\rental\models.py:33
+msgid "Sports"
+msgstr "Sportowy"
+
+#: .\rental\models.py:35
+msgid "Category"
+msgstr "Kategoria"
+
+#: .\rental\models.py:36
+msgid "Brand"
+msgstr "Marka"
+
+#: .\rental\models.py:37
+msgid "Model"
+msgstr "Model"
+
+#: .\rental\models.py:38
+msgid "Engine type"
+msgstr "Typ silnika"
+
+#: .\rental\models.py:39
+msgid "Number of seats"
+msgstr "Ilość siedzeń"
+
+#: .\rental\models.py:40
+msgid "Number of doors"
+msgstr "Ilość drzwi"
+
+#: .\rental\models.py:41
+msgid "Fuel consumption"
+msgstr "Zużycie paliwa"
+
+#: .\rental\models.py:42
+msgid "Engine power"
+msgstr "Moc silnika"
+
+#: .\rental\models.py:43
+msgid "Color"
+msgstr "Kolor"
+
+#: .\rental\models.py:45
+msgid "Gearbox type"
+msgstr "Typ skrzyni biegów"
+
+#: .\rental\models.py:46
+msgid "Availability"
+msgstr "Dostępność"
+
+#: .\rental\models.py:47
+msgid "Price"
+msgstr "Cena"
+
+#: .\rental\models.py:48
+msgid "Value"
+msgstr "Wartość"
+
+#: .\rental\models.py:54 .\rental\models.py:102
+msgid "Car"
+msgstr "Samochód"
+
+#: .\rental\models.py:55
+msgid "Cars"
+msgstr "Samochody"
+
+#: .\rental\models.py:59
+msgid "Identity card"
+msgstr "Dowód osobisty"
+
+#: .\rental\models.py:60
+msgid "Passport"
+msgstr "Paszport"
+
+#: .\rental\models.py:61
+msgid "Driver's license"
+msgstr "Prawo jazdy"
+
+#: .\rental\models.py:63
+msgid "Phone number"
+msgstr "Numer telefonu"
+
+#: .\rental\models.py:64
+msgid "Identity document number"
+msgstr "Numer dokumentu tożsamości"
+
+#: .\rental\models.py:65
+msgid "Identity document type"
+msgstr "Typ dokumentu tożsamości"
+
+#: .\rental\models.py:71
+msgid "User data"
+msgstr "Dane użytkownika"
+
+#: .\rental\models.py:72
+msgid "User data (Rental)"
+msgstr "Dane użytkowników (Rental)"
+
+#: .\rental\models.py:76
+#, fuzzy
+#| msgid "User data"
+msgid "User"
+msgstr "Dane użytkownika"
+
+#: .\rental\models.py:77
+msgid "Country"
+msgstr "Kraj"
+
+#: .\rental\models.py:78
+msgid "City"
+msgstr "Miasto"
+
+#: .\rental\models.py:79
+msgid "Post code"
+msgstr "Kod pocztowy"
+
+#: .\rental\models.py:80
+msgid "Street"
+msgstr "Ulica"
+
+#: .\rental\models.py:81
+msgid "Building number"
+msgstr "Numer budynku"
+
+#: .\rental\models.py:82
+msgid "This field is optional."
+msgstr "To pole jest opcjonalne."
+
+#: .\rental\models.py:82
+msgid "Apartment number"
+msgstr "Numer mieszkania"
+
+#: .\rental\models.py:91
+msgid "Address"
+msgstr "Adres"
+
+#: .\rental\models.py:92
+msgid "Addresses"
+msgstr "Adresy"
+
+#: .\rental\models.py:96
+msgid "Card"
+msgstr "Karta"
+
+#: .\rental\models.py:97
+msgid "Cash"
+msgstr "Gotówka"
+
+#: .\rental\models.py:98
+msgid "Transfer"
+msgstr "Przelew"
+
+#: .\rental\models.py:99
+msgid "Blik"
+msgstr "Blik"
+
+#: .\rental\models.py:101
+msgid "Customer"
+msgstr "Klient"
+
+#: .\rental\models.py:103
+msgid "Order value"
+msgstr "Wartość zamówienia"
+
+#: .\rental\models.py:104
+msgid "Declared rental duration"
+msgstr "Deklarowany czas wypożyczenia"
+
+#: .\rental\models.py:105
+msgid "Pickup date"
+msgstr "Data odebrania"
+
+#: .\rental\models.py:106
+msgid "Return date"
+msgstr "Data zwrotu"
+
+#: .\rental\models.py:107
+msgid "Deposit"
+msgstr "Depozyt"
+
+#: .\rental\models.py:108
+msgid "Payment method"
+msgstr "Metoda płatności"
+
+#: .\rental\models.py:109
+msgid "Payment status"
+msgstr "Status płatności"
+
+#: .\rental\models.py:115
+msgid "Order"
+msgstr "Zamówienie"
+
+#: .\rental\models.py:116
+msgid "Orders"
+msgstr "Zamówienia"
+
+
+
+
+
+#FRONTEND
+
+msgid "logo"
+msgstr "logo"
+
+msgid "CarRental"
+msgstr "Wypożyczalnia samochodów"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Home"
+msgstr "Strona główna"
+
+msgid "All cars"
+msgstr "Wszystkie samochody"
+
+msgid "About us"
+msgstr "O nas"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Login"
+msgstr "Zaloguj"
+
+msgid "Sign-Up"
+msgstr "Zarejestruj się"
+
+msgid "Language"
+msgstr "Język"
+
+msgid "Designed by Maciej Palenica &copy; 2024"
+msgstr "Zaprojektowane przez Macieja Palenica &copy; 2024"
+
+
+msgid "Congratulations!"
+msgstr "Gratulacje!"
+
+msgid "Your registration was successful. Welcome to our community! Now you can enjoy all the features of our platform. Enjoy the adventure with us!"
+msgstr "Twoja rejestracja przebiegła pomyślnie. Witamy w naszej społeczności! Teraz możesz korzystać z wszystkich funkcji naszej platformy. Ciesz się przygodą z nami!"
+
+msgid "Registration Form:"
+msgstr "Formularz rejestracji:"
+
+
+msgid "Plan your trip with us!"
+msgstr "Zaplanuj podróż z nami!"
+
+msgctxt "money"
+msgid "Save"
+msgstr "Zaoszczędź"
+
+msgid "with our car rental"
+msgstr "dzięki naszej wypożyczalni"
+
+msgid "Book"
+msgstr "Zarezerwuj"
+
+msgid "day"
+msgstr "dzień"
+
+msgid "Learn more"
+msgstr "Dowiedz się więcej"
+
+msgid "What we offer"
+msgstr "Co oferujemy"
+
+msgid "Recommended cars"
+msgstr "Polecane samochody"
+
+msgid "Details"
+msgstr "Szczegóły"
+
+msgid "Most picked cars"
+msgstr "Najczęściej wybierane samochody"
+
+msgid "Our cars"
+msgstr "Nasze samochody"
+
+msgid "Choose from many of our amazing rental vehicles for your next adventure or business trip."
+msgstr "Wybieraj spośród wielu naszych niesamowitych pojazdów do wynajęcia na następną przygodę lub podróż służbową."
+
+
+
+
+

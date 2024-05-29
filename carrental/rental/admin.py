@@ -8,7 +8,10 @@ class AddressInline(admin.StackedInline):
     can_delete = False # Czy można usuwać adresy powiązane z obiektem nadrzędnym
 
 
+# Wyrejestrowanie domyślnego modelu użytkownika i ponowne zarejestrowanie niestandardowego
+admin.site.unregister(AuthUser)
 # Rejestruj modele w panelu admina
+admin.site.register(Equipment)
 admin.site.register(Car, list_display = (
     'id',
     'brand',
@@ -17,11 +20,10 @@ admin.site.register(Car, list_display = (
     'price', 
     'engine_type', 
     'engine_power', 
-    'gearbox_types', 
+    'gearbox_type', 
     'available', 
     'category',
 ))
-admin.site.register(Equipment)
 admin.site.register(Order, list_display = (
     '__str__', 
     'customer', 
@@ -34,9 +36,6 @@ admin.site.register(Order, list_display = (
     'payment_method', 
     'payment_status' 
 ))
-
-# Wyrejestrowanie domyślnego modelu użytkownika i ponowne zarejestrowanie niestandardowego
-admin.site.unregister(AuthUser)
 admin.site.register(UserData, inlines = (AddressInline,), list_display = (
     'username', 
     'first_name', 

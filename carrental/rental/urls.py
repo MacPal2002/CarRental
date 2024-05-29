@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls.i18n import set_language
 from . import views
 from . import user
 
@@ -9,4 +10,8 @@ urlpatterns = [
     path('user/login', user.login, name='login'),
     path('user/logout', user.logout, name='logout'),
     path('user/register', user.register, name='register'),
+]
+
+urlpatterns += [
+    path('setlang/', set_language, name='setlang'),
 ]

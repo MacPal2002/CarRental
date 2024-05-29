@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-24 19:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\settings.py:111
+msgid "english"
+msgstr "english"
+
+#: .\settings.py:112
+msgid "polish"
+msgstr "polish"
+
+#: .\rental\models.py:6 .\rental\models.py:12 .\rental\models.py:44
+msgid "Equipment"
+msgstr "Equipment"
+
+#: .\rental\models.py:13
+msgid "Equipments"
+msgstr "Equipments"
+
+#: .\rental\models.py:17
+msgid "Petrol"
+msgstr "Petrol"
+
+#: .\rental\models.py:18
+msgid "Diesel"
+msgstr "Diesel"
+
+#: .\rental\models.py:19
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#: .\rental\models.py:20
+msgid "Electric"
+msgstr "Electric"
+
+#: .\rental\models.py:21
+msgid "Hydrogen"
+msgstr "Hydrogen"
+
+#: .\rental\models.py:24
+msgid "Automatic"
+msgstr "Automatic"
+
+#: .\rental\models.py:25
+msgid "Manual"
+msgstr "Manual"
+
+#: .\rental\models.py:26
+msgid "Semi-automatic"
+msgstr "Semi-automatic"
+
+#: .\rental\models.py:29
+msgid "SUV"
+msgstr "SUV"
+
+#: .\rental\models.py:30
+msgid "City-friendly"
+msgstr "City-friendly"
+
+#: .\rental\models.py:31
+msgid "Off-road"
+msgstr "Off-road"
+
+#: .\rental\models.py:32
+msgid "Van"
+msgstr "Van"
+
+#: .\rental\models.py:33
+msgid "Sports"
+msgstr "Sports"
+
+#: .\rental\models.py:35
+msgid "Category"
+msgstr "Category"
+
+#: .\rental\models.py:36
+msgid "Brand"
+msgstr "Brand"
+
+#: .\rental\models.py:37
+msgid "Model"
+msgstr "Model"
+
+#: .\rental\models.py:38
+msgid "Engine type"
+msgstr "Engine type"
+
+#: .\rental\models.py:39
+msgid "Number of seats"
+msgstr "Number of seats"
+
+#: .\rental\models.py:40
+msgid "Number of doors"
+msgstr "Number of doors"
+
+#: .\rental\models.py:41
+msgid "Fuel consumption"
+msgstr "Fuel consumption"
+
+#: .\rental\models.py:42
+msgid "Engine power"
+msgstr "Engine power"
+
+#: .\rental\models.py:43
+msgid "Color"
+msgstr "Color"
+
+#: .\rental\models.py:45
+msgid "Gearbox type"
+msgstr "Gearbox type"
+
+#: .\rental\models.py:46
+msgid "Availability"
+msgstr "Availability"
+
+#: .\rental\models.py:47
+msgid "Price"
+msgstr "Price"
+
+#: .\rental\models.py:48
+msgid "Value"
+msgstr "Value"
+
+#: .\rental\models.py:54 .\rental\models.py:102
+msgid "Car"
+msgstr "Car"
+
+#: .\rental\models.py:55
+msgid "Cars"
+msgstr "Cars"
+
+#: .\rental\models.py:59
+msgid "Identity card"
+msgstr "Identity card"
+
+#: .\rental\models.py:60
+msgid "Passport"
+msgstr "Passport"
+
+#: .\rental\models.py:61
+msgid "Driver's license"
+msgstr "Driver's license"
+
+#: .\rental\models.py:63
+msgid "Phone number"
+msgstr "Phone number"
+
+#: .\rental\models.py:64
+msgid "Identity document number"
+msgstr "Identity document number"
+
+#: .\rental\models.py:65
+msgid "Identity document type"
+msgstr "Identity document type"
+
+#: .\rental\models.py:71
+msgid "User data"
+msgstr "User data"
+
+#: .\rental\models.py:72
+msgid "User data (Rental)"
+msgstr "User data (Rental)"
+
+#: .\rental\models.py:76
+msgid "User"
+msgstr "User"
+
+#: .\rental\models.py:77
+msgid "Country"
+msgstr "Country"
+
+#: .\rental\models.py:78
+msgid "City"
+msgstr "City"
+
+#: .\rental\models.py:79
+msgid "Post code"
+msgstr "Post code"
+
+#: .\rental\models.py:80
+msgid "Street"
+msgstr "Street"
+
+#: .\rental\models.py:81
+msgid "Building number"
+msgstr "Building number"
+
+#: .\rental\models.py:82
+msgid "This field is optional."
+msgstr "This field is optional."
+
+#: .\rental\models.py:82
+msgid "Apartment number"
+msgstr "Apartment number"
+
+#: .\rental\models.py:91
+msgid "Address"
+msgstr "Address"
+
+#: .\rental\models.py:92
+msgid "Addresses"
+msgstr "Addresses"
+
+#: .\rental\models.py:96
+msgid "Card"
+msgstr "Card"
+
+#: .\rental\models.py:97
+msgid "Cash"
+msgstr "Cash"
+
+#: .\rental\models.py:98
+msgid "Transfer"
+msgstr "Transfer"
+
+#: .\rental\models.py:99
+msgid "Blik"
+msgstr "Blik"
+
+#: .\rental\models.py:101
+msgid "Customer"
+msgstr "Customer"
+
+#: .\rental\models.py:103
+msgid "Order value"
+msgstr "Order value"
+
+#: .\rental\models.py:104
+msgid "Declared rental duration"
+msgstr "Declared rental duration"
+
+#: .\rental\models.py:105
+msgid "Pickup date"
+msgstr "Pickup date"
+
+#: .\rental\models.py:106
+msgid "Return date"
+msgstr "Return date"
+
+#: .\rental\models.py:107
+msgid "Deposit"
+msgstr "Deposit"
+
+#: .\rental\models.py:108
+msgid "Payment method"
+msgstr "Payment method"
+
+#: .\rental\models.py:109
+msgid "Payment status"
+msgstr "Payment status"
+
+#: .\rental\models.py:115
+msgid "Order"
+msgstr "Order"
+
+#: .\rental\models.py:116
+msgid "Orders"
+msgstr "Orders"
+
+
+
+# FRONTEND
+
+msgid "logo"
+msgstr "logo"
+
+msgid "CarRental"
+msgstr "Car Rental"
+
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "All cars"
+msgstr "All cars"
+
+msgid "About us"
+msgstr "About us"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Sign-Up"
+msgstr "Sign-Up"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Designed by Maciej Palenica &copy; 2024"
+msgstr "Designed by Maciej Palenica &copy; 2024"
+
+
+msgid "Congratulations!"
+msgstr "Congratulations!"
+
+msgid "Your registration was successful. Welcome to our community! Now you can enjoy all the features of our platform. Enjoy the adventure with us!"
+msgstr "Your registration was successful. Welcome to our community! Now you can enjoy all the features of our platform. Enjoy the adventure with us!"
+
+msgid "Registration Form:"
+msgstr "Registration Form:"
+
+msgid "Plan your trip with us!"
+msgstr "Plan your trip with us!"
+
+msgctxt "money"
+msgid "Save"
+msgstr "Save"
+
+msgid "with our car rental"
+msgstr "with our car rental"
+
+msgid "Book"
+msgstr "Book now"
+
+msgid "Learn more"
+msgstr "Learn more"
+
+msgid "What we offer"
+msgstr "What we offer"
+
+msgid "Recommended cars"
+msgstr "Recommended cars"
+
+msgid "day"
+msgstr "day"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Most picked cars"
+msgstr "Most picked cars"
+
+msgid "Our cars"
+msgstr "Our cars"
+
+msgid "Choose from many of our amazing rental vehicles for your next adventure or business trip."
+msgstr "Choose from many of our amazing rental vehicles for your next adventure or business trip."
+

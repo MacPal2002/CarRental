@@ -118,6 +118,9 @@
     list-style-type: none;
     padding: 0;
 }
+.tab-content {
+    min-height: 400px;
+}
 
 
 /* display 1 */
@@ -196,4 +199,39 @@ display: flex;
 }
 .pagination .page-item.active .page-link  {
     background: lightslategrey;
+}
+
+
+
+.car-card {
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.car-card:hover {
+    background-color: #eeeded;
+
+}
+.car-specs i {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+.car-specs p {
+    margin: 0;
+}
+
+#languageForm{
+    margin: .5rem 0 0 0;
+
+}
+
+@media (min-width: 768px) {
+    #languageForm{
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translateY(-50%);
+        margin: 0 1.5rem 0 0 ;
+    }
 }

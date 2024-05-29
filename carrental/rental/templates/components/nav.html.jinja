@@ -1,12 +1,13 @@
 {% load static %}
+{% load i18n %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="{% url 'index' %}">
 
-        <img src="{% static 'images/logo.png' %}" alt="logo" height="36">
-        <h1 class="fs-5 d-inline-block">CarRental</h1>
+        <img src="{% static 'images/logo.png' %}" alt="{% trans 'logo' %}" height="36">
+        <h1 class="fs-5 d-inline-block">{% trans 'CarRental' %}</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -14,20 +15,20 @@
         
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Strona Główna</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">{% trans 'Home' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'cars' %}">Wszystkie samochody</a>
+          <a class="nav-link" aria-current="page" href="{% url 'cars' %}">{% trans 'All cars' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">O nas</a>
+          <a class="nav-link" aria-current="page" href="#">{% trans 'About us' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Kontakt</a>
+          <a class="nav-link" aria-current="page" href="#">{% trans 'Contact' %}</a>
         </li>
         <div class="btn-group ms-5">
-          <a role="button" href="{% url 'login' %}" class="btn btn-outline-danger">Zaloguj</a> 
-          <a role="button" href="{% url 'register' %}" class="ms-3 btn btn-danger">Zarejestruj się</a>
+          <a role="button" href="{% url 'login' %}" class="btn btn-outline-danger">{% trans 'Login' %}</a> 
+          <a role="button" href="{% url 'register' %}" class="ms-3 btn btn-danger">{% trans 'Sign-Up' %}</a>
         </div> 
       </ul>
     </div>

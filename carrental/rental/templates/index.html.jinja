@@ -1,16 +1,17 @@
 {% extends "basic/base.html.jinja" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
 <div class="row">
     <div class="col-12 col-xl-4">
-        <h3 class="text-center fs-4 fw-bold">Zaplanuj podróż z nami!</h2>
-        <h2 class="text-center fw-bold display-4"><span class="text-danger">Zaoszczędź</span> dzięki naszej wypożyczalni</h2>
+        <h3 class="text-center fs-4 fw-bold">{% trans "Plan your trip with us!" %}</h2>
+        <h2 class="text-center fw-bold display-4"><span class="text-danger">{% trans "Save" context "money" %}</span> {% trans "with our car rental" %}</h2>
         
         <div class="mt-5 d-flex justify-content-center">
-            <a role="button" href="{% url 'cars' %}" class="btn btn-danger btn-lg">Zarezerwuj</a>
-            <a role="button" href="#" class=" ms-3 btn btn-outline-dark btn-lg">Dowiedz się wiecej</a>
+            <a role="button" href="{% url 'cars' %}" class="btn btn-danger btn-lg">{% trans "Book" %}</a>
+            <a role="button" href="#" class=" ms-3 btn btn-outline-dark btn-lg">{% trans "Learn more" %}</a>
         </div>
 
     </div>
@@ -21,8 +22,8 @@
 
 <section class="pt-5 text-center container">
     <div class="pt-lg-5 pb-lg-2 mx-auto">
-        <h1 class="fw-bold text-muted fs-3 mb-5">Co oferujemy</h1>
-        <p class="display-6 fw-bold">Polecane samochody</p>
+        <h1 class="fw-bold text-muted fs-3 mb-5">{% trans "What we offer" %}</h1>
+        <p class="display-6 fw-bold">{% trans "Recommended cars" %}</p>
     </div>
 
     <div id="recommendedCarsCarosel" class="carousel slide container" data-bs-ride="carousel">
@@ -37,9 +38,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -54,9 +55,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -71,9 +72,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -88,9 +89,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -105,9 +106,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -122,9 +123,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -143,7 +144,7 @@
 
 <section class="pt-5 text-center container">
     <div class="pt-lg-5 pb-lg-2 mx-auto">
-        <p class="display-6 fw-bold">Najczęściej wybierane samochody</p>
+        <p class="display-6 fw-bold">{% trans "Most picked cars" %}</p>
     </div>
 
     <div id="mostPickedCarsCarosel" class="carousel slide container" data-bs-ride="carousel">
@@ -158,9 +159,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -175,9 +176,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -192,9 +193,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -209,9 +210,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -226,9 +227,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>
@@ -243,9 +244,9 @@
                         <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/dzień</span></p>
+                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">Wynajmij</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">Szczegóły</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
                     </div>
                 </div>
             </div>

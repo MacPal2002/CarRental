@@ -39,7 +39,7 @@
                     </div>
                     <div class="mt-auto d-flex justify-content-end" style="gap: 20px;">
                         <p class="m-0  align-self-center fs-5 fw-bold text-primary-emphasis">${{car.price}} <span class="text-muted">/day</span></p>
-                        <button class="btn btn-lg btn-outline-danger rounded-0 border-2 fw-bold">Zarezerwuj</button>
+                        <a href="{% url 'rent' car_id=car.id %}" class="btn btn-lg btn-outline-danger rounded-0 border-2 fw-bold">Zarezerwuj</a>
                     </div>
                 </div>
             </div>

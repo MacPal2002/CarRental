@@ -25,7 +25,7 @@ admin.site.register(Car, list_display = (
     'category',
 ))
 admin.site.register(Order, list_display = (
-    '__str__', 
+    'id', 
     'customer', 
     'car', 
     'order_value', 

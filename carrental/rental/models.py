@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 class Equipment(models.Model):
@@ -101,7 +102,7 @@ class Order(models.Model):
     customer = models.ForeignKey(UserData, on_delete=models.RESTRICT, verbose_name=_('Customer'))
     car = models.ForeignKey(Car, on_delete=models.RESTRICT, verbose_name=_('Car'))
     order_value = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Order value'))
-    declared_order_duration = models.DurationField(verbose_name=_('Declared rental duration'))
+    declared_order_duration = models.IntegerField(verbose_name=_('Declared rental duration'))
     pickup_date = models.DateTimeField(verbose_name=_('Pickup date'))
     return_date = models.DateTimeField(verbose_name=_('Return date'))
     deposit = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Deposit'))
@@ -109,7 +110,17 @@ class Order(models.Model):
     payment_status = models.BooleanField(verbose_name=_('Payment status'))
 
     def __str__(self) -> str:
-        return f"Order ID: {self.id} ({_('Paid') if self.payment_status else _('Unpaid')})"
+        return f"order-id:{self.id}"
+    def clean(self):
+        """
+        Walidacja dat odbioru i zwrotu zamówienia.
+        """
+        if self.pickup_date >= self.return_date:
+            raise ValidationError(_('Return date must be later than pickup date.'))
+
+        from django.utils import timezone
+        if self.pickup_date < timezone.now() or self.return_date < timezone.now():
+            raise ValidationError(_('Dates must be greater than today\'s date.'))
 
     class Meta:
         verbose_name = _("Order")

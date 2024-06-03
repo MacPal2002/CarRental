@@ -52,3 +52,19 @@ UserAddressFormSet = inlineformset_factory(
     min_num=1,
     can_delete=False
 )
+
+class OrderForm(ModelForm):
+
+    class Meta:
+        model = models.Order
+        exclude = ['id', 'payment_status', 'declared_order_duration' ]
+        widgets = {
+            'customer': forms.Select(attrs={'class': 'mb-3 form-control'}),
+            'car': forms.Select(attrs={'class': 'mb-3 form-control', 'style': "pointer-events: none;"}),
+            'declared_order_duration': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
+            'pickup_date': forms.DateInput(attrs={'class': 'mb-3 form-control', 'type': 'date'}),
+            'return_date': forms.DateInput(attrs={'class': 'mb-3 form-control', 'type': 'date'}),
+            'deposit': forms.TextInput(attrs={'class': 'mb-3 form-control', 'readonly': True}),
+            'payment_method': forms.Select(attrs={'class': 'mb-3 form-control'}),
+            'order_value': forms.TextInput(attrs={'class': 'mb-3 form-control', }),
+        }

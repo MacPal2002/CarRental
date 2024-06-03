@@ -30,3 +30,4 @@ def register(request):
         user_form = forms.RegistrationForm()
         address_form = forms.UserAddressFormSet()
         return render(request, 'register.html.jinja', {'register_user_form': user_form, 'register_address_form': address_form})
+

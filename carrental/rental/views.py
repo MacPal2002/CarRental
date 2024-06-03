@@ -1,7 +1,8 @@
 import pandas as pd
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse
-from .models import Car
+from .models import Car, Order
+from . import forms
 
 
 # Create your views here.
@@ -29,3 +30,33 @@ def cars(request):
 
 def car(request, car_id):
     return render(request, 'car.html.jinja')
+
+def rent(request, car_id):
+
+    # Sprawdź, czy istnieje samochód o podanym ID
+    car = get_object_or_404(Car, id=car_id)
+
+    initial_deposit = 0.1 * float(car.value)
+    
+    if request.method == 'POST':
+        order_form = forms.OrderForm(request.POST)
+        if order_form.is_valid():
+            # Zapisz zamówienie
+            order = order_form.save(commit=False)
+            order.car = car
+            order.deposit = initial_deposit
+            order.save()
+            return redirect('confirm', order=order)
+        else:
+            # Wyświetl formularz z błędami
+            return render(request, 'rent.html.jinja', {'order_form': order_form, 'car_id': car_id})
+    else:
+        # Utwórz formularz dla nowego zamówienia
+        order_form = forms.OrderForm(initial={'car': car.id, 'deposit': initial_deposit})
+        return render(request, 'rent.html.jinja', {'order_form': order_form, 'car_id': car_id})
+    
+
+
+
+def confirm(request, order):
+    return render(request, 'confirm.html.jinja', {'order': order})

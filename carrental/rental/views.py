@@ -79,11 +79,11 @@ def rent(request, car_id):
             return redirect('confirm', order=order)
         else:
             # Wyświetl formularz z błędami
-            return render(request, 'rent.html.jinja', {'order_form': order_form, 'car_id': car_id})
+            return render(request, 'rent.html.jinja', {'order_form': order_form, 'car_id': car_id, 'car_price': car.price})
     else:
         # Utwórz formularz dla nowego zamówienia
         order_form = forms.OrderForm(initial={'car': car.id, 'deposit': initial_deposit, 'customer': current_user.id})
-        return render(request, 'rent.html.jinja', {'order_form': order_form, 'car_id': car_id})
+        return render(request, 'rent.html.jinja', {'order_form': order_form, 'car_id': car_id, 'car_price': str(car.price)})
     
 
 

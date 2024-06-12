@@ -33,6 +33,7 @@ class RegistrationForm(UserCreationForm):
 
 
 
+
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=65, label=_('Username'), widget=forms.TextInput(attrs={'class': 'mb-3 form-control'}))
     password = forms.CharField(max_length=65, label=_('Password'), widget=forms.PasswordInput(attrs={'class': 'mb-3 form-control'}))

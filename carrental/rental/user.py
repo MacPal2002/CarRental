@@ -1,12 +1,15 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from . import forms
 from django.contrib.auth import login as auth_login, authenticate, logout as auth_logout
 from django.utils.translation import gettext_lazy as _
 
 def login(request):
+    next_url = request.GET.get('next', 'index')
+
     if request.method == 'GET':
         login_form = forms.LoginForm()
-        return render(request, 'login.html.jinja', {'login_form': login_form})
+        return render(request, 'login.html.jinja', {'login_form': login_form, 'next': next_url})
     
     elif request.method == 'POST':
         login_form = forms.LoginForm(request.POST)
@@ -17,13 +20,13 @@ def login(request):
             user = authenticate(request, username=username, password=password)  # Autentykacja użytkownika
             if user is not None:
                 auth_login(request, user)  # Logowanie użytkownika
-                return redirect('index')  # Przekierowanie do innej strony po udanym logowaniu
+                return redirect(next_url)
             else:
                 # Obsługa nieudanego logowania
                 login_form.add_error(None, _("Invalid username or password. Please try again."))
 
         # Jeśli formularz jest niepoprawny, ponowne wyświetlenie formularza z błędami
-        return render(request, 'login.html.jinja', {'login_form': login_form})
+        return render(request, 'login.html.jinja', {'login_form': login_form, 'next': next_url})
 
 def logout(request):
     auth_logout(request)

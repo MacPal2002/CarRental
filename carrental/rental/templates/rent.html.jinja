@@ -51,3 +51,30 @@
 
 
 {% endblock content %}
+{% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pickupDateInput = document.getElementById('id_pickup_date');
+            const returnDateInput = document.getElementById('id_return_date');
+            const orderValueInput = document.getElementById('id_order_value');
+            const dailyRate = {{car_price}};
+
+            function calculateOrderValue() {
+                const pickupDate = new Date(pickupDateInput.value);
+                const returnDate = new Date(returnDateInput.value);
+
+                if (pickupDate && returnDate && returnDate > pickupDate) {
+                    const days = (returnDate - pickupDate) / (1000 * 60 * 60 * 24);
+                    const orderValue = days * dailyRate;
+                    orderValueInput.value = orderValue.toFixed(2);
+                } else {
+                    orderValueInput.value = '';
+                }
+            }
+
+            pickupDateInput.addEventListener('change', calculateOrderValue);
+            returnDateInput.addEventListener('change', calculateOrderValue);
+        });
+    </script>
+{% endblock scripts %}
+

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.forms import ValidationError
 from django.utils.translation import gettext_lazy as _
 from PIL import Image
+from django.utils import timezone
 
 class Equipment(models.Model):
     equipment = models.CharField(max_length=50, verbose_name=_('Equipment'))
@@ -149,7 +150,7 @@ class Order(models.Model):
         if self.pickup_date >= self.return_date:
             raise ValidationError(_('Return date must be later than pickup date.'))
 
-        from django.utils import timezone
+
         if self.pickup_date < timezone.now() or self.return_date < timezone.now():
             raise ValidationError(_('Dates must be greater than today\'s date.'))
 

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ValidationError
 from django.utils.translation import gettext_lazy as _
+from PIL import Image
 
 class Equipment(models.Model):
     equipment = models.CharField(max_length=50, verbose_name=_('Equipment'))
@@ -34,6 +35,7 @@ class Car(models.Model):
         ("sports", _("Sports")),
     ]
     category = models.CharField(max_length=50, choices=CATEGORIES, verbose_name=_('Category'))
+    image = models.ImageField(upload_to='images', default='images/default_image.jpg', verbose_name=_('Image'))
     brand = models.CharField(max_length=50, verbose_name=_('Brand'))
     model = models.CharField(max_length=50, verbose_name=_('Model'))
     engine_type = models.CharField(max_length=20, choices=ENGINE_TYPES, verbose_name=_('Engine type'))
@@ -54,6 +56,35 @@ class Car(models.Model):
     class Meta:
         verbose_name = _("Car")
         verbose_name_plural = _("Cars")
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            try:
+                old_car = Car.objects.get(pk=self.pk)
+                if old_car.image != self.image:
+                    old_car.image.delete(save=False)
+            except Car.DoesNotExist:
+                pass
+
+        super().save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        # Docelowa szerokość obrazu
+        desired_width = 800
+
+        # Docelowa proporcja obrazu
+        desired_ratio = 330.75 / 186.05
+
+        # Obliczanie docelowej wysokości przy zachowaniu proporcji
+        desired_height = int(desired_width / desired_ratio)
+
+        # Skalowanie obrazu do docelowych wymiarów
+        img = img.resize((desired_width, desired_height))
+
+        # Zapisanie przeskalowanego obrazu na tej samej ścieżce
+        img.save(self.image.path)
+
 
 class UserData(User):
     IDENTITY_DOCUMENT_TYPES = [
@@ -102,12 +133,12 @@ class Order(models.Model):
     customer = models.ForeignKey(UserData, on_delete=models.RESTRICT, verbose_name=_('Customer'))
     car = models.ForeignKey(Car, on_delete=models.RESTRICT, verbose_name=_('Car'))
     order_value = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Order value'))
-    declared_order_duration = models.IntegerField(verbose_name=_('Declared rental duration'))
+    declared_order_duration = models.IntegerField(null=True, verbose_name=_('Declared rental duration'))
     pickup_date = models.DateTimeField(verbose_name=_('Pickup date'))
     return_date = models.DateTimeField(verbose_name=_('Return date'))
     deposit = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Deposit'))
     payment_method = models.CharField(max_length=20, choices=PAYMENT_METHODS, verbose_name=_('Payment method'))
-    payment_status = models.BooleanField(verbose_name=_('Payment status'))
+    payment_status = models.BooleanField(default=False, verbose_name=_('Payment status'))
 
     def __str__(self) -> str:
         return f"order-id:{self.id}"

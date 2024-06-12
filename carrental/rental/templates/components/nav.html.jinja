@@ -26,10 +26,18 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">{% trans 'Contact' %}</a>
         </li>
-        <div class="btn-group ms-5">
-          <a role="button" href="{% url 'login' %}" class="btn btn-outline-danger">{% trans 'Login' %}</a> 
-          <a role="button" href="{% url 'register' %}" class="ms-3 btn btn-danger">{% trans 'Sign-Up' %}</a>
-        </div> 
+        
+        {%if request.user.is_authenticated %}
+          <div class="d-flex align-items-center ms-5">
+            <span class="text-white me-3">{% trans 'Hi' %}, {{ request.user.username }} </span>
+            <a role="button" href="{% url 'logout' %}" class="btn btn-outline-danger">{% trans 'Log out' %}</a>
+          </div> 
+        {% else %}
+          <div class="btn-group ms-5">
+            <a role="button" href="{% url 'login' %}" class="btn btn-outline-danger">{% trans 'Login' %}</a> 
+            <a role="button" href="{% url 'register' %}" class="ms-3 btn btn-danger">{% trans 'Sign-Up' %}</a>
+          </div>
+        {% endif %} 
       </ul>
     </div>
   </div>

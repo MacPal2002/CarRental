@@ -242,6 +242,9 @@ msgstr "Blik"
 msgid "Customer"
 msgstr "Klient"
 
+msgid "Image"
+msgstr "Zdjęcie"
+
 #: .\rental\models.py:103
 msgid "Order value"
 msgstr "Wartość zamówienia"
@@ -365,7 +368,53 @@ msgstr "Nasze samochody"
 msgid "Choose from many of our amazing rental vehicles for your next adventure or business trip."
 msgstr "Wybieraj spośród wielu naszych niesamowitych pojazdów do wynajęcia na następną przygodę lub podróż służbową."
 
+msgid "Number of seats:"
+msgstr "Liczba miejsc:"
 
+msgid "Number of doors:"
+msgstr "Liczba drzwi:"
 
+msgid "Engine power:"
+msgstr "Moc silnika:"
 
+msgid "HP"
+msgstr "KM"
+
+msgid "Engine type:"
+msgstr "Typ silnika:"
+
+msgid "Gearbox:"
+msgstr "Skrzynia biegów:"
+
+msgid "Fuel consumption:"
+msgstr "Spalanie:"
+
+msgid "Rental"
+msgstr "Wyposażenie"
+
+msgid "Your car rental was successful. Enjoy your journey with our car! Please return the car in good condition and on time. Have a safe trip!"
+msgstr "Twoje wynajęcie samochodu zakończyło się sukcesem. Ciesz się podróżą naszym samochodem! Prosimy o zwrot samochodu w dobrym stanie i na czas. Bezpiecznej podróży!"
+
+#: .\forms.py:6
+msgid "Username"
+msgstr "Nazwa użytkownika"
+
+#: .\forms.py:7
+msgid "Password"
+msgstr "Hasło"
+
+msgid "Invalid username or password. Please try again."
+msgstr "Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj ponownie."
+
+msgid "Return date must be later than pickup date."
+msgstr "Data zwrotu musi być późniejsza niż data odbioru."
+
+msgid "Dates must be greater than today's date."
+msgstr "Daty muszą być większe niż dzisiejsza data."
+
+msgid "Login Form:"
+msgstr "Formularz logowania:"
+
+msgid "Hi"
+msgstr "Cześć"
 

@@ -4,7 +4,7 @@
 
 {% block content %}
     <div style="width: 70%;" class="mx-auto px-5 p-3 bg-light rounded">
-        <h3 class="text-center display-5 fw-bold mt-5">Wypożyczenie</h3>
+        <h3 class="text-center display-5 fw-bold mt-5">{% trans "Rental" %}</h3>
         <hr>
         <form class="mt-5" action="" method="post">
             {% csrf_token %}
@@ -19,7 +19,16 @@
                     {% endif %}
                     {% for field in order_form.visible_fields %}
                         {{ field.label_tag }}
-                        {{ field }}
+                        {% if field.name == 'order_value' %}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                {{ field }}
+                            </div>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
                         <ul class="errorlist">
                             {% if field.errors %}
                                 {% for error in field.errors %}
@@ -27,20 +36,13 @@
                                 {% endfor %}
                             {% endif %}
                         </ul>
-                        {% if register_user_form.errors %}
-                            {% if field.help_text %}
-                                <ul class="helptext">
-                                    <li>{{ field.help_text }}</li>
-                                </ul>
-                            {% endif %}
-                        {% endif %}
                     {% endfor %}
 
                 </div>
             </div>
             <hr class="mt-5">
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-outline-success mt-3 mb-3">Wypożycz</button>
+                <button type="submit" class="btn btn-outline-success mt-3 mb-3">{% trans "Book" %}</button>
             </div>
         </form>
     </div>

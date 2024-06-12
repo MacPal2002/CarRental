@@ -9,7 +9,8 @@ class AddressInline(admin.StackedInline):
 
 
 # Wyrejestrowanie domyślnego modelu użytkownika i ponowne zarejestrowanie niestandardowego
-admin.site.unregister(AuthUser)
+# admin.site.unregister(AuthUser)
+
 # Rejestruj modele w panelu admina
 admin.site.register(Equipment)
 admin.site.register(Car, list_display = (

@@ -238,6 +238,9 @@ msgstr "Blik"
 msgid "Customer"
 msgstr "Customer"
 
+msgid "Image"
+msgstr "Image"
+
 #: .\rental\models.py:103
 msgid "Order value"
 msgstr "Order value"
@@ -358,3 +361,52 @@ msgstr "Our cars"
 msgid "Choose from many of our amazing rental vehicles for your next adventure or business trip."
 msgstr "Choose from many of our amazing rental vehicles for your next adventure or business trip."
 
+msgid "Number of seats:"
+msgstr "Number of seats:"
+
+msgid "Number of doors:"
+msgstr "Number of doors:"
+
+msgid "Engine power:"
+msgstr "Engine power:"
+
+msgid "HP"
+msgstr "HP"
+
+msgid "Engine type:"
+msgstr "Engine type:"
+
+msgid "Gearbox:"
+msgstr "Gearbox:"
+
+msgid "Fuel consumption:"
+msgstr "Fuel consumption:"
+
+msgid "Rental"
+msgstr "Rental"
+
+msgid "Your car rental was successful. Enjoy your journey with our car! Please return the car in good condition and on time. Have a safe trip!"
+msgstr "Your car rental was successful. Enjoy your journey with our car! Please return the car in good condition and on time. Have a safe trip!"
+
+#: .\forms.py:6
+msgid "Username"
+msgstr "Username"
+
+#: .\forms.py:7
+msgid "Password"
+msgstr "Password"
+
+msgid "Invalid username or password. Please try again."
+msgstr "Invalid username or password. Please try again."
+
+msgid "Return date must be later than pickup date."
+msgstr "Return date must be later than pickup date."
+
+msgid "Dates must be greater than today's date."
+msgstr "Dates must be greater than today's date."
+
+msgid "Login Form:"
+msgstr "Login Form:"
+
+msgid "Hi"
+msgstr "Hi"

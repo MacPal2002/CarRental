@@ -2,6 +2,7 @@ from django.forms import ModelForm, inlineformset_factory
 from . import models
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class RegistrationForm(UserCreationForm):
@@ -28,6 +29,15 @@ class RegistrationForm(UserCreationForm):
             'identity_document_type': forms.Select(attrs={'class': 'mb-3 form-select'}),
             'identity_document_no': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
         }
+
+
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=65, label=_('Username'), widget=forms.TextInput(attrs={'class': 'mb-3 form-control'}))
+    password = forms.CharField(max_length=65, label=_('Password'), widget=forms.PasswordInput(attrs={'class': 'mb-3 form-control'}))
+
+
 
 
 class AddressForm(ModelForm):
@@ -59,7 +69,7 @@ class OrderForm(ModelForm):
         model = models.Order
         exclude = ['id', 'payment_status', 'declared_order_duration' ]
         widgets = {
-            'customer': forms.Select(attrs={'class': 'mb-3 form-control'}),
+            'customer': forms.Select(attrs={'class': 'mb-3 form-control', 'style': "pointer-events: none;"}),
             'car': forms.Select(attrs={'class': 'mb-3 form-control', 'style': "pointer-events: none;"}),
             'declared_order_duration': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
             'pickup_date': forms.DateInput(attrs={'class': 'mb-3 form-control', 'type': 'date'}),
@@ -68,3 +78,17 @@ class OrderForm(ModelForm):
             'payment_method': forms.Select(attrs={'class': 'mb-3 form-control'}),
             'order_value': forms.TextInput(attrs={'class': 'mb-3 form-control', }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)   
+        # Nowa kolejność pól
+        field_order = [
+            'customer',
+            'car',
+            'pickup_date',
+            'return_date',
+            'deposit',
+            'payment_method',
+            'order_value'
+        ]
+        self.order_fields(field_order)      

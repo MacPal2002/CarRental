@@ -28,108 +28,26 @@
 
     <div id="recommendedCarsCarosel" class="carousel slide container" data-bs-ride="carousel">
     <div class="carousel-inner w-100">
-        <div class="carousel-item active">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-1.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
+        {% for car in recommended_cars %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="col-12 col-md-6 col-lg-4 px-3">
+                    <div class="car-wrap rounded"> 
+                        <div class="d-flex align-items-end">
+                            <img class="img img-fluid rounded" src="{{car.image.url}}" alt="car">
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
+                        <div class="text">
+                            <h2 class="mb-0"><a class="text-decoration-none" href="#">{{car.brand}}</a></h2>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="fs-5">{{car.model}}</span>
+                                <p class="price ml-auto">${{car.price}}<span>/{% trans "day" %}</span></p>
+                            </div>
+                            <p class="d-flex mb-0 d-block"><a href="{% url 'rent' car_id=car.id %}" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="{% url 'car' car_id=car.id %}" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-2.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-3.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-4.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-5.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-6.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+        
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#recommendedCarsCarosel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -149,108 +67,26 @@
 
     <div id="mostPickedCarsCarosel" class="carousel slide container" data-bs-ride="carousel">
     <div class="carousel-inner w-100">
-        <div class="carousel-item active">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-1.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
+        {% for car in popular_cars %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="col-12 col-md-6 col-lg-4 px-3">
+                    <div class="car-wrap rounded"> 
+                        <div class="d-flex align-items-end">
+                            <img class="img img-fluid rounded" src="{{car.image.url}}" alt="car">
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
+                        <div class="text">
+                            <h2 class="mb-0"><a class="text-decoration-none" href="#">{{car.brand}}</a></h2>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="fs-5">{{car.model}}</span>
+                                <p class="price ml-auto">${{car.price}}<span>/{% trans "day" %}</span></p>
+                            </div>
+                            <p class="d-flex mb-0 d-block"><a href="{% url 'rent' car_id=car.id %}" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="{% url 'car' car_id=car.id %}" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-2.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-3.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-4.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-5.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-        <div class="col-12 col-md-6 col-lg-4 px-3">
-                <div class="car-wrap rounded"> 
-                    <div class="d-flex align-items-end">
-                        <img class="img img-fluid rounded" src="{% static 'images/mock/car-6.jpg' %}" alt="car">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a class="text-decoration-none" href="#">Range Rover</a></h2>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/{% trans "day" %}</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-danger py-2 me-1">{% trans "Book" %}</a> <a href="#" class="btn btn-outline-secondary py-2 ml-1">{% trans "Details" %}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#mostPickedCarsCarosel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

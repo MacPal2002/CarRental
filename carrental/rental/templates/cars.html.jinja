@@ -4,13 +4,12 @@
 
 {% block content %}
 
-
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-bold">{% trans "Our cars" %}</h1>
-        <p class="lead text-muted">{% trans "Choose from many of our amazing rental vehicles for your next adventure or business trip." %}</p>
-      </div>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-bold">{% trans "Our cars" %}</h1>
+            <p class="lead text-muted">{% trans "Choose from many of our amazing rental vehicles for your next adventure or business trip." %}</p>
+        </div>
     </div>
 </section>
 <div class="container">
@@ -20,64 +19,64 @@
         {% for car in cars %}
             <div class="car-card shadow-lg my-3 row py-3">
                 <div class="py-3 col-12 col-lg-5 text-center">
-                <img src="{% static 'images/mock/car-1.jpg' %}" alt="Peugeot 208" class="rounded-1 w-75 img-fluid">
+                    <img src="{{car.image.url}}" alt="Peugeot 208" class="rounded-1 w-75 img img-fluid">
                 </div>
                 <div class="col-12 col-lg-7 d-flex flex-column">
-                    <h4 class="my-2 text-danger">{{car.brand}} {{car.model}}</h4>
+                    <a class="text-decoration-none" href="{% url 'car' car_id=car.id %}">
+                        <h4 class="my-2 text-danger">{{car.brand}} {{car.model}}</h4>
+                    </a> 
                     <hr>
                     <div class="car-specs row">
                         <div class="col-12 col-lg-6">
-                            <p><i class="fas fa-users"></i> Liczba miejsc: {{car.seats_count}}</p>
-                            <p><i class="fas fa-car"></i> Liczba drzwi: {{car.doors_count}}</p>
-                            <p><i class="fas fa-horse-head"></i> Moc silnika: {{car.engine_power}} KM</p>
+                            <p><i class="fas fa-users"></i> {% trans "Number of seats:" %} {{car.seats_count}}</p>
+                            <p><i class="fas fa-car"></i> {% trans "Number of doors:" %} {{car.doors_count}}</p>
+                            <p><i class="fas fa-horse-head"></i> {% trans "Engine power:" %} {{car.engine_power}} {% trans "HP" %}</p>
                         </div>
                         <div class="col-12 col-lg-6">
-                            <p><i class="fas fa-gas-pump"></i> Typ silnika: {{car.get_engine_type_display}}</p>
-                            <p><i class="fas fa-cogs"></i> Skrzynia biegów: {{car.get_gearbox_type_display}}</p>
-                            <p><i class="fas fa-burn"></i> Spalanie: {{car.fuel_usage}} l/100km</p>
+                            <p><i class="fas fa-gas-pump"></i> {% trans "Engine type:" %} {{car.get_engine_type_display}}</p>
+                            <p><i class="fas fa-cogs"></i> {% trans "Gearbox:" %} {{car.get_gearbox_type_display}}</p>
+                            <p><i class="fas fa-burn"></i> {% trans "Fuel consumption:" %} {{car.fuel_usage}} l/100km</p>
                         </div>
                     </div>
                     <div class="mt-auto d-flex justify-content-end" style="gap: 20px;">
-                        <p class="m-0  align-self-center fs-5 fw-bold text-primary-emphasis">${{car.price}} <span class="text-muted">/day</span></p>
-                        <a href="{% url 'rent' car_id=car.id %}" class="btn btn-lg btn-outline-danger rounded-0 border-2 fw-bold">Zarezerwuj</a>
+                        <p class="m-0 align-self-center fs-5 fw-bold text-primary-emphasis">${{car.price}} <span class="text-muted">/{% trans "day" %}</span></p>
+                        <a href="{% url 'rent' car_id=car.id %}" class="btn btn-lg btn-outline-danger rounded-0 border-2 fw-bold">{% trans "Book" %}</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
-    {% endfor%} 
+    {% endfor %} 
 </div>
-    <hr>
-    <ul class="pagination justify-content-end">
-        {# Previous #}
-        <li class="page-item">
-            <a class="page-link bg-transparent" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
+<hr>
+<!-- <ul class="pagination justify-content-end">
+    {# Previous #}
+    <li class="page-item">
+        <a class="page-link bg-transparent" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+    </li>
 
-        <li class="mx-1 page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="mx-1 page-item"><a class="page-link" href="#">2</a></li>
-        <li class="mx-1 page-item"><a class="page-link" href="#">3</a></li>
+    <li class="mx-1 page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="mx-1 page-item"><a class="page-link" href="#">2</a></li>
+    <li class="mx-1 page-item"><a class="page-link" href="#">3</a></li>
 
-        {# Next #}
-        <li class="page-item">
-            <a class="page-link bg-transparent" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-    <div class="container mt-5">
-        {{cars_table | safe}}
-    </div>
-
-</div>
+    {# Next #}
+    <li class="page-item">
+        <a class="page-link bg-transparent" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+    </li>
+</ul> -->
+<!-- <div class="container mt-5">
+    {{cars_table | safe}}
+</div> -->
 
 {% endblock content %}
 {% block scripts %}
-    <script>
-        let table = new DataTable('#cars_table', {
-            responsive: true,
-            scrollX: true,
-        });    
-    </script>
+<!-- <script>
+    let table = new DataTable('#cars_table', {
+        responsive: true,
+        scrollX: true,
+    });    
+</script> -->
 {% endblock scripts %}

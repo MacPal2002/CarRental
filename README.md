@@ -11,12 +11,33 @@ CarRental is a comprehensive car rental management system that enables:
 - Manage fleet and orders (admin panel)
 - Recommendations and ranking of the most popular cars
 
+## 📺 Visual Presentation
+
+### User Experience
+![Main Page Dashboard](.github/assets/s1.png)
+*View of the client-facing homepage and its modular design.*
+
+#### User Experience & Fleet
+<p align="center">
+  <img src=".github/assets/demo1.gif" alt="Homepage Overview" width="400">
+  <img src=".github/assets/demo2.gif" alt="Full Fleet View" width="400">
+</p>
+
+*Left: Comprehensive overview of the homepage, featuring personalized recommendations and popularity rankings.*
+
+*Right: Complete fleet browser displaying all available vehicles by category.*
+
+
+### Management Dashboard (Admin Panel)
+![Admin Car Management](.github/assets/s2.png)
+*Internal system for administrators to manage fleet, add new vehicles, and configure equipment options.*
+
 ## Technologies
 
-- **Backend**: Django 5.0.3
+- **Backend**: Django 6.0.2
 - **Frontend**: Jinja2 templates
-- **Database**: SQLite
-- **Programming Language**: Python 3.x
+- **Database**: SQLite (development)
+- **Programming Language**: Python 3.14+
 - **Additional Libraries**:
   - Pandas - for data processing
   - Pillow - for image management
